@@ -5,12 +5,15 @@
 ###########################################
 # Datatypes (KEYWORD1)
 ###########################################
-CLed ESP8266 KEYWORD1
+CLed			KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
 ###########################################
-switchOn switchOff toggle KEYWORD2
+getMode	 		KEYWORD2
+setLED	 		KEYWORD2
+switchOff		KEYWORD2
+switchOn	 	KEYWORD2
 
 ###########################################
 # Constants (LITERAL1)
