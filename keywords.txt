@@ -1,11 +1,11 @@
 ###########################################
-# Syntax Coloring Map For CLed
+# Syntax Coloring Map For Led
 ###########################################
 
 ###########################################
 # Datatypes (KEYWORD1)
 ###########################################
-CLed			KEYWORD1
+Led			KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
@@ -18,3 +18,4 @@ switchOn	 	KEYWORD2
 ###########################################
 # Constants (LITERAL1)
 ###########################################
+MaxLed			LITERAL1

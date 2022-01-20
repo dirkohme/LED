@@ -25,7 +25,7 @@
 #pragma once
 #include <Ticker.h>
 
-class CLed {
+class Led {
 public:
 	// max. number of LEDs
 	static const int MaxLed	= 8;
@@ -70,7 +70,7 @@ protected:
 
 public:
 	// constructor
-	CLed();
+	Led();
 
 	// get mode of operation
 	// @param iLed number of LED (0 .. MaxLed-1)
@@ -96,7 +96,7 @@ public:
 	              const Mode eMode = On);
 };
 
-extern CLed Led;
+extern Led LEDs;
 
 
 //===| eof - end of file |====================================================

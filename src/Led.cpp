@@ -38,12 +38,12 @@
 //----------------------------------------------------------------------------
 // global variable for access
 //----------------------------------------------------------------------------
-CLed Led;
+Led LEDs;
 
 //----------------------------------------------------------------------------
 // constructor
 //----------------------------------------------------------------------------
-CLed::CLed()
+Led::Led()
 {
 #ifdef TEST
 	Serial.println("[Led] constructor");
@@ -56,21 +56,21 @@ CLed::CLed()
 	
 	m_boFirst = true;
 	m_iCounter10 = -1;
-	m_coTimer.attach_ms(100, CLed::TimerFuncStatic);
+	m_coTimer.attach_ms(100, Led::TimerFuncStatic);
 }
 
 //----------------------------------------------------------------------------
 // timer function (static)
 //----------------------------------------------------------------------------
-/*static*/ void CLed::TimerFuncStatic()
+/*static*/ void Led::TimerFuncStatic()
 {
-	Led.TimerFunc();
+	LEDs.TimerFunc();
 }
 
 //----------------------------------------------------------------------------
 // timer function per LED
 //----------------------------------------------------------------------------
-void CLed::TimerFuncLed(const int iLed)
+void Led::TimerFuncLed(const int iLed)
 {
 	bool boChange   = m_boFirst;
 	bool boNewState = false;
@@ -179,7 +179,7 @@ void CLed::TimerFuncLed(const int iLed)
 //----------------------------------------------------------------------------
 // timer function (dynamic)
 //----------------------------------------------------------------------------
-void CLed::TimerFunc()
+void Led::TimerFunc()
 {
 #ifdef TEST
 	Serial.printf("[Led] count=%2d: ", m_iCounter10);
@@ -208,7 +208,7 @@ void CLed::TimerFunc()
 //----------------------------------------------------------------------------
 // get mode
 //----------------------------------------------------------------------------
-const CLed::Mode CLed::getMode(const int iLed /*= 0*/)
+const Led::Mode Led::getMode(const int iLed /*= 0*/)
 {
 	Mode eMode = Invalid;
 	
@@ -223,9 +223,9 @@ const CLed::Mode CLed::getMode(const int iLed /*= 0*/)
 //----------------------------------------------------------------------------
 // set LED
 //----------------------------------------------------------------------------
-void CLed::setLED(const int  iLed,
-                  const int  iGPIO,
-		  const bool boInvers /*= false*/)
+void Led::setLED(const int  iLed,
+                 const int  iGPIO,
+		 const bool boInvers /*= false*/)
 {
 	if (isValid(iLed))
 	{
@@ -248,7 +248,7 @@ void CLed::setLED(const int  iLed,
 //----------------------------------------------------------------------------
 // switch LED off
 //----------------------------------------------------------------------------
-void CLed::switchOff(const int iLed /*= 0*/)
+void Led::switchOff(const int iLed /*= 0*/)
 {
 	if (isValid(iLed))
 	{
@@ -259,7 +259,7 @@ void CLed::switchOff(const int iLed /*= 0*/)
 //----------------------------------------------------------------------------
 // switch LED on
 //----------------------------------------------------------------------------
-void CLed::switchOn(const int  iLed  /*= 0*/,
+void Led::switchOn(const int  iLed  /*= 0*/,
                     const Mode eMode /*= On*/)
 {
 	if (isValid(iLed))

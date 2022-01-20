@@ -1,5 +1,5 @@
 //==============================================================================
-// LedTest sample program for CLed class
+// LedTest sample program for Led class
 // (c) 2021-2022 by Dirk Ohme
 //==============================================================================
 
@@ -30,7 +30,7 @@ void setup()
   Serial.println("LedTest");
 
   // initialize LED class
-  Led.setLED(0, LED_BUILTIN, true);
+  LEDs.setLED(0, LED_BUILTIN, true);
 }
 
 //------------------------------------------------------------------------------
@@ -39,46 +39,46 @@ void setup()
 void loop()
 {
   Serial.println("*** on ***");
-  Led.switchOn(0, CLed::On);
+  LEDs.switchOn(0, Led::On);
   delay(5000);
   Serial.println("*** blink ***");
-  Led.switchOn(0, CLed::Blink);
+  LEDs.switchOn(0, Led::Blink);
   delay(5000);
   Serial.println("*** blink invers ***");
-  Led.switchOn(0, CLed::BlinkInv);
+  LEDs.switchOn(0, Led::BlinkInv);
   delay(5000);
   Serial.println("*** flash 1x ***");
-  Led.switchOn(0, CLed::Flash1x);
+  LEDs.switchOn(0, Led::Flash1x);
   delay(5000);
   Serial.println("*** flash 1x invers ***");
-  Led.switchOn(0, CLed::Flash1xInv);
+  LEDs.switchOn(0, Led::Flash1xInv);
   delay(5000);
   Serial.println("*** flash 2x ***");
-  Led.switchOn(0, CLed::Flash2x);
+  LEDs.switchOn(0, Led::Flash2x);
   delay(5000);
   Serial.println("*** flash 2x invers ***");
-  Led.switchOn(0, CLed::Flash2xInv);
+  LEDs.switchOn(0, Led::Flash2xInv);
   delay(5000);
   Serial.println("*** flash 3x ***");
-  Led.switchOn(0, CLed::Flash3x);
+  LEDs.switchOn(0, Led::Flash3x);
   delay(5000);
   Serial.println("*** flash 3x invers ***");
-  Led.switchOn(0, CLed::Flash3xInv);
+  LEDs.switchOn(0, Led::Flash3xInv);
   delay(5000);
   Serial.println("*** flash 4x ***");
-  Led.switchOn(0, CLed::Flash4x);
+  LEDs.switchOn(0, Led::Flash4x);
   delay(5000);
   Serial.println("*** flash 4x invers ***");
-  Led.switchOn(0, CLed::Flash4xInv);
+  LEDs.switchOn(0, Led::Flash4xInv);
   delay(5000);
   Serial.println("*** flash ***");
-  Led.switchOn(0, CLed::Flash);
+  LEDs.switchOn(0, Led::Flash);
   delay(5000);
   Serial.println("*** flash invers ***");
-  Led.switchOn(0, CLed::FlashInv);
+  LEDs.switchOn(0, Led::FlashInv);
   delay(5000);
   Serial.println("*** off ***");
-  Led.switchOff(0);
+  LEDs.switchOff(0);
   delay(5000);
 }
 
